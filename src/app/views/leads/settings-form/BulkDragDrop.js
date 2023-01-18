@@ -1,5 +1,5 @@
 import React,{useState} from 'react'
-import { Button } from '@material-ui/core';
+import { Button, TextField, MenuItem } from '@material-ui/core';
 
 
 const BulkDragDrop = () => {
@@ -8,6 +8,12 @@ const BulkDragDrop = () => {
   return (
     <div>
         <div>
+        <TextField defaultValue="1" variant="outlined" size="small" select>
+        <MenuItem value="1">Form Entries</MenuItem>
+        {/* <MenuItem value="2">Last Month</MenuItem> */}
+        {/* <MenuItem value="3">Six Month</MenuItem> */}
+        {/* <MenuItem value="4">Last Year</MenuItem> */}
+      </TextField>
         <Button
                 fullWidth
                 color="primary"

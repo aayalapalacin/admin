@@ -12,6 +12,7 @@ import config from '../../../config.js';
 import bc from '../../services/breathecode';
 import AlertAcademyAlias from 'app/components/AlertAcademyAlias';
 import { toast } from "react-toastify";
+import AddLeadModal from 'app/components/AddLeadModal';
 
 const relativeTime = require('dayjs/plugin/relativeTime');
 
@@ -361,15 +362,7 @@ const Leads = () => {
             />
           </div>
           <div className="">
-            <Link
-              to="/growth/sales/new"
-              color="primary"
-              className="btn btn-primary"
-            >
-              <Button variant="contained" color="primary">
-                Add new lead
-              </Button>
-            </Link>
+            <AddLeadModal />
           </div>
         </div>
       </div>

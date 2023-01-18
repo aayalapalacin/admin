@@ -40,7 +40,13 @@ export default function AddLeadModal() {
             > 
          <Button variant="contained" color="primary"> Single Lead</Button>  
              </Link>
+             <Link
+              to="/growth/sales/bulk"
+              color="primary"
+              className="btn btn-primary"
+            > 
          <Button variant="contained" color="primary"> Bulk</Button>
+         </Link>
         </Box>
       </Modal>
     </div>

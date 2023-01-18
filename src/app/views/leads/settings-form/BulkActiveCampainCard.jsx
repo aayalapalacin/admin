@@ -1,7 +1,7 @@
 import React from "react";
 import { Alert, AlertTitle } from "@material-ui/lab";
 import { Card, Divider, CircularProgress, Box, } from "@material-ui/core";
-import { AddActiveCampaign } from "./AddActiveCampaign";
+import  BulkDragDrop  from "./BulkDragDrop";
 
 
 const BulkActiveCampaignCard = ({defaultAcademy, status, setACAcademy }) => {
@@ -23,7 +23,7 @@ const BulkActiveCampaignCard = ({defaultAcademy, status, setACAcademy }) => {
           <div className="m-3">
            <p>{status.message}</p>
           </div>
-          <AddActiveCampaign setACAcademy={setACAcademy} initialValues={defaultAcademy} isCreating={defaultAcademy.id === null} />
+          <BulkDragDrop  />
         </Card>
   );
 };

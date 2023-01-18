@@ -47,8 +47,8 @@ const BulkUpload = () => {
       <div className="mb-sm-30">
         <Breadcrumb
           routeSegments={[
-            { name: "Growth", path: "/dashboard" },
-            { name: "Settings" },
+            { name: "Leads", path: '/growth/leads' },
+            { name: "Bulk Upload Manager" },
           ]}
         />
       </div>

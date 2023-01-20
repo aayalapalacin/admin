@@ -131,7 +131,7 @@ export const navigations = [
         icon: "collections",
         children: [
             {
-                name: "Media Gallery",
+                name: "",
                 path: "/media/gallery",
                 iconText: "GAL",
                 capabilities: ["read_media"],

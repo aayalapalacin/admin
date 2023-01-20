@@ -4,7 +4,8 @@ import { Button} from '@material-ui/core';
 import Typography from '@mui/material/Typography';
 import Modal from '@mui/material/Modal';
 import { Link } from 'react-router-dom';
-
+import DowndownMenu from '../components/DropdownMenu';
+import history from "../../history"
 
 const style = {
   position: 'absolute',
@@ -25,7 +26,19 @@ export default function AddLeadModal() {
 
   return (
     <div>
-      <Button onClick={handleOpen} variant="contained" color="primary">Add new lead</Button>
+       <DowndownMenu
+            options={[
+              { label: 'Swich to: Single Lead', value: 'sales/new' },
+              { label: 'Swich to: Bulk', value: 'sales/bulk' }
+            ]}
+            icon="more_horiz"
+            onSelect={({ value }) => history.push(`./${value}`)}
+          >
+            <Button variant="contained" color="primary">
+              Switch to another Pipeline
+            </Button>
+          </DowndownMenu>
+      {/* <Button onClick={handleOpen} variant="contained" color="primary">Add new lead</Button>
       <Modal
         open={open}
         onClose={handleClose}
@@ -48,7 +61,7 @@ export default function AddLeadModal() {
          <Button variant="contained" color="primary"> Bulk</Button>
          </Link>
         </Box>
-      </Modal>
+      </Modal> */}
     </div>
   );
 }

@@ -61,7 +61,7 @@ const ShopContainer = ({
                 Upload
               </Button>
             ) : (
-              <StyledDropzone uploadFiles={uploadFiles} hideZone={() => setUpload(false)} />
+              <StyledDropzone padding="20px" fontSize="14px" uploadFiles={uploadFiles} hideZone={() => setUpload(false)} />
             )}
             <TextField
               select

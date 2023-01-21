@@ -1,23 +1,10 @@
 import { Button } from '@material-ui/core';
+import { size } from 'lodash';
 import React, { useMemo } from 'react';
 import { useDropzone } from 'react-dropzone';
 import { useDispatch } from 'react-redux';
 
-const baseStyle = {
-  flex: 1,
-  display: 'flex',
-  flexDirection: 'column',
-  alignItems: 'center',
-  padding: '20px',
-  borderWidth: 2,
-  borderRadius: 2,
-  borderColor: '#eeeeee',
-  borderStyle: 'dashed',
-  backgroundColor: '#fafafa',
-  color: '#bdbdbd',
-  outline: 'none',
-  transition: 'border .24s ease-in-out',
-};
+
 
 const activeStyle = {
   borderColor: '#2196f3',
@@ -31,7 +18,26 @@ const rejectStyle = {
   borderColor: '#ff1744',
 };
 
-export function StyledDropzone(props) {
+export function StyledDropzone(props)
+{
+  const baseStyle = {
+    flex: 1,
+    fontSize: props.fontSize,
+    display: 'flex',
+    flexDirection: 'column',
+    alignItems: 'center',
+    padding: props.padding,
+    borderWidth: 2,
+    borderRadius: 2,
+    borderColor: '#eeeeee',
+    borderStyle: 'dashed',
+    backgroundColor: '#fafafa',
+    color: '#bdbdbd',
+    outline: 'none',
+    transition: 'border .24s ease-in-out',
+  };
+  
+
   const dispatch = useDispatch();
   const {
     getRootProps,

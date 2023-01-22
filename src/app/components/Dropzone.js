@@ -48,7 +48,10 @@ export function StyledDropzone(props)
     acceptedFiles,
   } = useDropzone();
 
-  const acceptedFileItems = acceptedFiles.map((file) => (
+  const acceptedFileItems = acceptedFiles.map((file) => 
+  // console.log(file,"file selected")
+  (
+    
     <div key={file.path} className="card m-1 p-1">
       {file.path}
       {' '}

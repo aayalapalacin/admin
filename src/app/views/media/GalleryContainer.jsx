@@ -32,10 +32,11 @@ const ShopContainer = ({
   pagination,
 }) => {
   const [upload, setUpload] = useState(false);
-  const { selected = [] } = useSelector((state) => state.ecommerce);
+  const { selected = [] } = useSelector((state) => state.ecommerce );
   const dispatch = useDispatch();
 
   const handleSelectedMedia = (value) => {
+    console.log(value,"selected media value")
     const exist = selected.find((m) => m.id === value.id);
     if (exist) dispatch(selectMedia(selected.filter((m) => m.id !== value.id)));
     else dispatch(selectMedia(selected.concat(value)));

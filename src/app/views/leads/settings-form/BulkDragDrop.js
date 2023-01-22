@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Button, TextField, MenuItem } from "@material-ui/core";
-import { StyledDropzone } from "../../../components/Dropzone";
+import { BulkDropzone}  from "../../../components/BulkDropzone";
 import { uploadFiles, selectMedia } from "../../../redux/actions/MediaActions";
 import { makeStyles } from '@material-ui/core/styles';
 import Grid from '@mui/material/Grid'
@@ -22,11 +22,11 @@ const BulkDragDrop = () => {
       <Grid container spacing={3} alignItems="center">
             <Grid item md={4}>
             <div className="ml-4 mr-2 mb-4 ">
-          <StyledDropzone
+          <BulkDropzone
             padding="0px 10px"
             fontSize="10px"
-            uploadFiles={uploadFiles}
-            hideZone={() => setUpload(false)}
+            // uploadFiles={uploadFiles}
+            // hideZone={() => setUpload(false)}
           />
         </div>
             </Grid>

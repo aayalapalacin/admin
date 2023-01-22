@@ -59,8 +59,7 @@ const BulkUpload = () => {
           defaultAcademy={ACAcademy}
           setACAcademy={setACAcademy}
         />
-        {/* <BulkActiveCampaignCard
-        /> */}
+       
         <div className="mt-4">
           <div >
             <Tags className="mt-4" />

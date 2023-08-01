@@ -8,6 +8,7 @@ import {
   CREATE_CATEGORY,
   MEDIA_SELECTED,
   CLEAN_MEDIA_SELECTED,
+  UPLOAD_BULK_FILES,
 } from '../actions/MediaActions';
 
 const initialState = {
@@ -45,6 +46,12 @@ const MediaReducer = function (state = initialState, action) {
       };
     }
     case UPDATE_MEDIA_FILE: {
+      return {
+        ...state,
+        refresh: true,
+      };
+    }
+    case UPLOAD_BULK_FILES: {
       return {
         ...state,
         refresh: true,

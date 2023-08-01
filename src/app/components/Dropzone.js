@@ -22,11 +22,10 @@ export function StyledDropzone(props)
 {
   const baseStyle = {
     flex: 1,
-    fontSize: props.fontSize,
     display: 'flex',
     flexDirection: 'column',
     alignItems: 'center',
-    padding: props.padding,
+    padding: "20px",
     borderWidth: 2,
     borderRadius: 2,
     borderColor: '#eeeeee',

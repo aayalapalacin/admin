@@ -3,6 +3,7 @@ import bc from '../../services/breathecode';
 export const GET_PRODUCT_LIST = 'GET_PRODUCT_LIST';
 export const GET_CATEGORY_LIST = 'GET_CATEGORY_LIST';
 export const UPLOAD_MEDIA_FILE = 'UPLOAD_MEDIA_FILE';
+export const UPLOAD_BULK_FILES = 'UPDATE_BULK_FILES';
 export const UPDATE_MEDIA_FILE = 'UPDATE_MEDIA_FILE';
 export const DELETE_MEDIA_FILE = 'DELETE_MEDIA_FILE';
 export const CREATE_CATEGORY = 'CREATE_CATEGORY';
@@ -38,6 +39,17 @@ export const uploadFiles = (files) => (dispatch) => {
   bc.media().upload(form).then((res) => {
     dispatch({
       type: UPLOAD_MEDIA_FILE,
+      payload: res,
+    });
+  });
+};
+export const uploadBulkFiles = (files) => (dispatch) => {
+  const form = new FormData();
+  for (const file of files) form.append('file', file, file.name.split(' ').join('-'));
+  bc.bulk().uploadBulkFiles(form).then((res) => {
+    console.log(res,"dispatch filesss")
+    dispatch({
+      type: UPLOAD_BULK_FILES,
       payload: res,
     });
   });

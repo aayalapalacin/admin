@@ -473,6 +473,10 @@ class BreatheCodeClient {
                     "Send to CRM",
                     `${this.host}/marketing/academy/lead/process?id=${qs}`
                 )},
+                uploadBulkFiles: (payload) =>
+                axios.bcPut("Bulk", `${this.host}/marketing/academy/upload`, payload, {
+                    headers: { "Content-Type": "multipart/form-data" },
+                }),
         };
     }
 
@@ -847,13 +851,18 @@ class BreatheCodeClient {
                 ),
         };
     }
-
+    bulk(){
+        return{
+            
+        }
+    }
     media() {
         return {
             upload: (payload) =>
                 axios.bcPut("Media", `${this.host}/media/upload`, payload, {
                     headers: { "Content-Type": "multipart/form-data" },
                 }),
+            
             getAllCategories: () =>
                 axios.bcGet("Media", `${this.host}/media/category`),
             getMedia: (query) => {

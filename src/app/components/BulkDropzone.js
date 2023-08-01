@@ -46,7 +46,9 @@ export function BulkDropzone(props)
     isDragAccept,
     isDragReject,
     acceptedFiles,
-  } = useDropzone();
+  } = useDropzone({
+    
+  });
 
   const acceptedFileItems = acceptedFiles.map((file) => {
 
